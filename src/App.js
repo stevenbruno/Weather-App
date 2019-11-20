@@ -1,11 +1,12 @@
 import React from 'react';
+import Weather from './components/Weather';
 
 function App() {
   return (
     <React.Fragment>
       <header className="h-16 bg-gray-300 fixed top-0 w-full">
       </header>
-      <main className="flex flex-auto mt-24 md:mt-32">
+      <main className="flex flex-col mt-24 md:mt-32">
         <form class="md:w-full max-w-sm mx-auto">
           <div class="flex items-center border-b border-b-2 border-teal-500 py-2">
             <input 
@@ -14,11 +15,14 @@ function App() {
               placeholder="Search city" 
               aria-label="Full name">
             </input>
-            <button class="bg-teal-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              Search
+            <button 
+              type="submit"
+              class="bg-teal-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Search
             </button>
           </div>
         </form>
+        <Weather />
       </main>
       <footer className="h-16 bg-gray-300 fixed bottom-0 w-full">
       </footer>

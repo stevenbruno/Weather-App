@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Weather() {
+function Weather(props) {
+
   return (
     <div className="max-w-sm mx-auto">
-      weather component
     </div>
   )
 }

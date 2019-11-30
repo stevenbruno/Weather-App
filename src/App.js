@@ -6,13 +6,14 @@ function App() {
   
   const [weather, setWeather] = useState({});
   const [city, setCity] = useState('');
+  const [isSubmitted ,setIsSubmitted] = useState(false);
 
   const onSubmit = (e) => {
     e.preventDefault();
     Axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=3ab92d85d7f9573a3fe27982129c7bde`)
     .then(res => {
       setWeather(res.data);
-      debugger;
+      setIsSubmitted(true);
     })
   }
 
@@ -38,7 +39,7 @@ function App() {
             </button>
           </div>
         </form>
-        <Weather weather={weather} />
+        {isSubmitted ? <Weather weather={weather} /> : null}
       </main>
       <footer className="h-16 bg-gray-300 fixed bottom-0 w-full">
       </footer>
